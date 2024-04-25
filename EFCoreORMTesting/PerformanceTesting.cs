@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace EFCoreORMTesting
 {
-
+    
     [Orderer(BenchmarkDotNet.Order.SummaryOrderPolicy.FastestToSlowest)]
     [RankColumn]
     public class PerformanceTesting

@@ -12,7 +12,7 @@ namespace ORMTesting.Data
 {
     public class AppDBContext : DbContext
     {
-        private static readonly string _connectionString = ConnectString.GetString();
+        private static readonly string _connectionString = ConnectString.SQLConnectionString();
         public DbSet<Product> Products { get; set; }
         
 
@@ -20,7 +20,7 @@ namespace ORMTesting.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
-            options.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=TestDb;Trusted_Connection=True;");
+            options.UseSqlServer(_connectionString);
 
         }
     }

@@ -1,4 +1,5 @@
-﻿using Microsoft.Data.Sqlite;
+﻿using Microsoft.Data.SqlClient;
+using Microsoft.Data.Sqlite;
 using ORMTesting.Utils;
 using System;
 using System.Collections.Generic;
@@ -10,10 +11,10 @@ namespace ORMTesting.Data
 {
     public static  class DBConnection
     {
-        private static readonly string _connectionString= ConnectString.GetString();
-        public static SqliteConnection GetSqliteConnection() => new SqliteConnection(_connectionString);
+        private static readonly string _connectionString= ConnectString.SQLConnectionString();
+        //public static SqliteConnection GetSqliteConnection() => new SqliteConnection(_connectionString);
 
-        
+        public static SqlConnection GetSqlConnection() => new SqlConnection(_connectionString);
 
     }
 }

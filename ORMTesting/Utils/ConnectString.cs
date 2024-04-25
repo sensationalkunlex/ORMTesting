@@ -17,5 +17,6 @@ namespace ORMTesting.Utils
             
 
         }
+        public static string SQLConnectionString() => "Server=(localdb)\\mssqllocaldb;Database=TestDb;Trusted_Connection=True;";
     }
 }
